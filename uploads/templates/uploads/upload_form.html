@@ -1,3 +1,4 @@
+<!-- Conform to Django later -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,8 +6,18 @@
         <title>Upload Notes</title>
 
         <link rel="stylesheet" type="text/css" href="../../static/uploads/style.css">
+        <script src="../../static/uploads/src.js" defer></script>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     </head>
     <body>
-        <!-- What do we do -->
+        <div id="upload-card">
+            <!-- Initial upload cards screen -->
+            <h1>Upload Notes</h1>
+            <label class="file-label">
+                <input id="fileInput" type="file" style="display: none;">
+                <button id="customUploadBtn">Choose File</button>
+                <p id="initUploadError">This file is not supported. Please choose a different file.</p>
+            </label>
+        </div>
     </body>
 </html>

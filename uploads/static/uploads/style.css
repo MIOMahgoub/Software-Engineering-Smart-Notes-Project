@@ -1,3 +1,52 @@
 body {
     background-color: indigo;
+    text-align: center;
+
+    font-family: 'Fredoka One', sans-serif;
+
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#upload-card{
+    width: 75vw;
+    height: 75vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+
+    background: white;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(10,10,20,0.06)
+}
+
+#customUploadBtn {
+    background-color: midnightblue;
+    color: white;
+
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+
+    font-size: 1rem;
+    font-family: 'Fredoka One', sans-serif;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+#customUploadBtn:hover {
+    background-color: rgb(54, 54, 151);
+}
+
+#initUploadError {
+    opacity: 0;
+    color: red;
+
+    transition: opacity 0.3s ease;
 }
