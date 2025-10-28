@@ -10,14 +10,28 @@
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div id="upload-card">
+
+        <div id="upload-card" class="card">
             <!-- Initial upload cards screen -->
             <h1>Upload Notes</h1>
             <label class="file-label">
                 <input id="fileInput" type="file" style="display: none;">
                 <button id="customUploadBtn">Choose File</button>
+                <p>(Currently supported files: .pdf, .jpeg, .png)</p>
                 <p id="initUploadError">This file is not supported. Please choose a different file.</p>
             </label>
+        </div>
+
+        <div id="upload-prev" class="card">
+            <!-- Preview div -->
+             <div id="upload-prev-left">
+                <button id="changefile">Change File</button>
+                <button>Continue</button>
+                <p id="filenamedis">Filename</p>
+             </div>
+             <div id="upload-prev-right">
+
+             </div>
         </div>
     </body>
 </html>
