@@ -42,6 +42,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "uploads",
+    "accounts",
+    "admin_tools",
+    "analytics",
+    "flashcards",
+    "notes",
+    "quizzes",
 ]
 
 MIDDLEWARE = [
