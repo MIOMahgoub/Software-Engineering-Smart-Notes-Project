@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(128, 60, 200);
+    text-align: center;
+
+    font-family: 'Fredoka One', sans-serif;
+
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 75vw;
+    height: 75vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+
+    background: white;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(10,10,20,0.06);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 60%;
+  align-items: center;
+  font-size: 20px;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+
+  font-family: 'Fredoka One', sans-serif;
+}
+
+input:focus {
+  border-color: rgb(128, 60, 200);
+  outline: none;
+  box-shadow: 0 0 6px rgba(128, 60, 200, 0.5);
+}
+
+button {
+    background-color: midnightblue;
+    color: white;
+
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+
+    font-size: 1rem;
+    font-family: 'Fredoka One', sans-serif;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: rgb(54, 54, 151);
+}

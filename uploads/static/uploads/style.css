@@ -23,7 +23,7 @@ body {
     background: white;
     padding: 18px;
     border-radius: 8px;
-    box-shadow: 0 6px 18px rgba(10,10,20,0.06)
+    box-shadow: 0 6px 18px rgba(10,10,20,0.06);
 }
 button {
     background-color: midnightblue;
