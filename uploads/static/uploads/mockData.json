@@ -1,0 +1,37 @@
+{
+  "login": {
+    "username": "test",
+    "password": "password",
+    "status": "success",
+    "message": "Login successful"
+  },
+  "summaries": [
+    { "id": 1, "topic": "Biology", "text": "Photosynthesis is the process by which plants make food." },
+    { "id": 2, "topic": "History", "text": "The Renaissance was a period of cultural rebirth in Europe." }
+  ],
+  "flashcards": [
+    { "topic": "Biology", "question": "What is photosynthesis?", "answer": "Process by which plants make food." },
+    { "topic": "History", "question": "When did the Renaissance begin?", "answer": "14th century in Italy." }
+  ],
+  "quiz": {
+    "topic": "Biology",
+    "questions": [
+      {
+        "question": "What organelle performs photosynthesis?",
+        "options": ["Mitochondria", "Chloroplast", "Nucleus", "Ribosome"],
+        "answer": "Chloroplast"
+      },
+      {
+        "question": "What gas is absorbed during photosynthesis?",
+        "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+        "answer": "Carbon Dioxide"
+      }
+    ],
+    "score": 0,
+    "total": 2
+  },
+  "account": {
+    "username": "test",
+    "email": "test@example.com"
+  }
+}

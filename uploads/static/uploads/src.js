@@ -1,3 +1,12 @@
+console.log("Alive!");
+
+fetch('../../static/uploads/mockData.json') // Fetch mock data to use locally until we can connect to backend
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(err => console.error("Error loading mock data:", err));
+
 // Elements
 const fileInput = document.getElementById('fileInput');
 const customUploadBtn = document.getElementById('customUploadBtn');
