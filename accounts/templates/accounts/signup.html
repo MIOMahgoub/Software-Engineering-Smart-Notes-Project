@@ -6,26 +6,32 @@
         <title>Upload Notes</title>
 
         <link rel="stylesheet" type="text/css" href="../../static/accounts/style.css">
-        <script src="../../static/accounts/script.js" defer></script>
+        <script src="../../static/accounts/signup.js" defer></script>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     </head>
     <body>
 
-        <div class="card">
-            <!-- Login Screen -->
+        <div class="largecard">
+            <!-- Singup Screen -->
             <h1>Smart Notes</h1>
             <br>
             <form>
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username">
+                <span id="username-error" class="error-message"></span>
 
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password">
+                <span id="password-error" class="error-message"></span>
 
-                <button type="submit">Login</button>
+                <label for="confirm">Confirm Password</label>
+                <input type="password" id="confirm" name="confirm">
+                <span id="confirm-error" class="error-message"></span>
 
-                <br>
-                <p>New to SmartNotes? <a href="signup.html">Create an account!</a></p>
+                <!-- Global error message for overall issues -->
+                <p id="error" style="color:red;"></p>
+
+                <button type="submit">Sign Up</button>
             </form>
         </div>
 

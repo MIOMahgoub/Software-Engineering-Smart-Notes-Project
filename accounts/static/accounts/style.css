@@ -25,6 +25,20 @@ body {
     border-radius: 8px;
     box-shadow: 0 6px 18px rgba(10,10,20,0.06);
 }
+.largecard {
+    width: 90vw;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+
+    background: white;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(10,10,20,0.06);
+}
 
 form {
   display: flex;
@@ -45,12 +59,22 @@ input {
 
   font-family: 'Fredoka One', sans-serif;
 }
-
 input:focus {
   border-color: rgb(128, 60, 200);
   outline: none;
   box-shadow: 0 0 6px rgba(128, 60, 200, 0.5);
 }
+input.error {
+  border-color: red;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.6);
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
 
 button {
     background-color: midnightblue;
