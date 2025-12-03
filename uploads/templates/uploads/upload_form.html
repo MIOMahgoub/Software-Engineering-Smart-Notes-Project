@@ -1,12 +1,37 @@
+{% load static %}
 <!-- Conform to Django later -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Upload Notes</title>
-
+        <!-- adjustments to work more smoothly with django
         <link rel="stylesheet" type="text/css" href="../../static/uploads/style.css">
+        replaced with-->
+        <link rel="stylesheet" href="{% static 'uploads/style.css' %}">
+        <!-- CSRF Helper added by backend-->
+         <script>
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let cookie of cookies) {
+                        cookie = cookie.trim();
+                        if (cookie.startsWith(name + '=')) {
+                            cookieValue = cookie.substring(name.length + 1);
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+            const csrftoken = getCookie('csrftoken');
+        </script>
+        <!-- CSRF helper end-->
+         <!-- adjustments to work more smoothly with django
         <script src="../../static/uploads/src.js" defer></script>
+        replaced with-->
+        <script src="{% static 'uploads/src.js' %}" defer></script>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     </head>
     <body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic Mastery</title>
+</head>
+<body>
+    <h1>Your Topic Mastery</h1>
+
+    {% if topics %}
+        <ul>
+            {% for t in topics %}
+                <li>
+                    <strong>{{ t.tag.name }}</strong> — {{ t.mastery_score }}%<br>
+                    Updated: {{ t.last_updated }}
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No mastery data available yet.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,8 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Summary Page</title>
+    <!-- adjusting to cooperate with Django
     <link rel="stylesheet" type="text/css" href="../../static/uploads/summary.css">
+    New updated line by backend below-->
+    <link rel="stylesheet" href="{% static 'uploads/summary.css' %}">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
 
 
@@ -11,10 +17,11 @@
     <header>Summary Page</header>
 
     <div class="container">
-        <div class="title">Generated Summary</div>
+        <div class="title">Generated Summary<br>
+            <strong>{{ file.original_file.name|default:"Uploaded File" }}</strong> </div>
 
         <div class="summary-box">
-            <p>Summary will appear here.</p>
+            <p><!--Summary will appear here. (adjusted to work with backend)-->{{ summary|default:"No summary available."|linebreaksbr }}</p>
         </div>
     </div>
 

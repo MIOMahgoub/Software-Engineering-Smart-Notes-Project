@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Sessions</title>
+</head>
+<body>
+    <h1>Your Study Sessions</h1>
+
+    {% if sessions %}
+        <ul>
+            {% for s in sessions %}
+                <li>
+                    <strong>{{ s.start_time }} → {{ s.end_time }}</strong><br>
+                    Duration: {{ s.duration_minutes }} minutes<br>
+                    Notes used: {{ s.notes_used_count }}<br>
+                    Flashcards reviewed: {{ s.flashcards_reviewed_count }}<br>
+                    Quizzes taken: {{ s.quizzes_taken_count }}
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No study sessions recorded yet.</p>
+    {% endif %}
+</body>
+</html>

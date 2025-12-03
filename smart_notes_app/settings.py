@@ -33,6 +33,11 @@ ALLOWED_HOSTS = []
 
 # Tell Django to use our custom user model
 AUTH_USER_MODEL = "accounts.CustomUser"
+LOGIN_URL = "/login/"
+LOGIN_REDIRECT_URL = "/uploads/"
+LOGOUT_REDIRECT_URL = "/login/"
+
+
 
 # Application definition
 
@@ -96,6 +101,14 @@ DATABASES = {
     }
 }
 
+# OCR.Space configuration
+OCR_SPACE_API_KEY = os.getenv("OCR_SPACE_API_KEY", "")
+OCR_SPACE_ENDPOINT = os.getenv(
+    "OCR_SPACE_ENDPOINT",
+    "https://api.ocr.space/parse/image"
+)
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -132,6 +145,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

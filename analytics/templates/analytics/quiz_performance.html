@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Performance</title>
+</head>
+<body>
+    <h1>Your Quiz Performance</h1>
+
+    {% if performances %}
+        <ul>
+            {% for p in performances %}
+                <li>
+                    <strong>{{ p.quiz.title }}</strong><br>
+                    Score: {{ p.score }}%<br>
+                    Correct: {{ p.correct_answers }} | Incorrect: {{ p.incorrect_answers }}<br>
+                    Mastery change: {{ p.mastery_change }}<br>
+                    Taken: {{ p.taken_at }}
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No quiz performance records yet.</p>
+    {% endif %}
+</body>
+</html>

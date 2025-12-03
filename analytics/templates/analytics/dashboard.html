@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analytics Dashboard</title>
+</head>
+<body>
+    <h1>Analytics Dashboard</h1>
+
+    <ul>
+        <li>Total Study Sessions: {{ study_count }}</li>
+        <li>Total Quizzes Taken: {{ quizzes_taken }}</li>
+        <li>Mastered Topics (80%+): {{ mastered_topics }}</li>
+    </ul>
+
+    <a href="{% url 'study_sessions' %}">View Study Sessions</a><br>
+    <a href="{% url 'quiz_performance' %}">View Quiz Performance</a><br>
+    <a href="{% url 'topic_mastery' %}">View Topic Mastery</a><br>
+</body>
+</html>

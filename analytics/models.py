@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from accounts.models import CustomUser
 from notes.models import Tag
 from quizzes.models import Quiz
@@ -8,12 +9,18 @@ class StudySession(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="study_sessions")
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    duration_minutes = models.PositiveIntegerField()
+    duration_minutes = models.PositiveIntegerField(default=0)
     notes_used_count = models.PositiveIntegerField(default=0)
     flashcards_reviewed_count = models.PositiveIntegerField(default=0)
     quizzes_taken_count = models.PositiveIntegerField(default=0)
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        if self.start_time and self.end_time:
+            delta = self.end_time - self.start_time
+            self.duration_minutes = max(0, int(delta.total_seconds() // 60))
+        super().save(*args, **kwargs)    
 
     def __str__(self):
         return f"Study session by {self.user.username} on {self.start_time.date()}"
