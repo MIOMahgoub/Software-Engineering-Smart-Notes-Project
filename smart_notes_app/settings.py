@@ -108,6 +108,9 @@ OCR_SPACE_ENDPOINT = os.getenv(
     "https://api.ocr.space/parse/image"
 )
 
+HF_API_KEY = os.getenv("HF_API_KEY")
+HF_SUMMARY_MODEL = os.getenv("HF_SUMMARY_MODEL", "facebook/bart-large-cnn")
+
 
 
 # Password validation

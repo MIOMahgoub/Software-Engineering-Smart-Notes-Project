@@ -1,4 +1,4 @@
-{% load static %}
+<!--{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +7,7 @@
     <!-- adjusting to cooperate with Django
     <link rel="stylesheet" type="text/css" href="../../static/uploads/summary.css">
     New updated line by backend below-->
-    <link rel="stylesheet" href="{% static 'uploads/summary.css' %}">
+   <!-- <link rel="stylesheet" href="{% static 'uploads/summary.css' %}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
 
@@ -21,9 +21,68 @@
             <strong>{{ file.original_file.name|default:"Uploaded File" }}</strong> </div>
 
         <div class="summary-box">
-            <p><!--Summary will appear here. (adjusted to work with backend)-->{{ summary|default:"No summary available."|linebreaksbr }}</p>
+            <p><!--Summary will appear here. (adjusted to work with backend)--><!--{{ summary|default:"No summary available."|linebreaksbr }}</p>
         </div>
     </div>
 
+</body>
+</html>-->
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Summary Page</title>
+
+    <link rel="stylesheet" href="{% static 'uploads/summary.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+</head>
+
+<body>
+    <header>Summary & AI Insights</header>
+    <form action="{% url 'logout' %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="logout-btn">Logout</button>
+    </form>
+
+
+    <div class="container">
+
+        <div class="title">
+            Summary for {{ file.original_file.name|default:"Uploaded File" }}
+        </div>
+
+        <!-- SUMMARY -->
+        <h2>AI-Generated Summary</h2>
+        <div class="summary-box">
+            <p>{{ summary|linebreaksbr }}</p>
+        </div>
+
+        <!-- KEY POINTS -->
+        {% if file.key_points %}
+        <h2>Key Points</h2>
+        <div class="summary-box">
+            <p>{{ file.key_points|linebreaksbr }}</p>
+        </div>
+        {% endif %}
+
+        <!-- FLASHCARDS -->
+        {% if file.flashcards %}
+        <h2>Flashcards</h2>
+        <div class="summary-box">
+            <pre style="white-space: pre-wrap;">{{ file.flashcards }}</pre>
+        </div>
+        {% endif %}
+
+        <!-- QUIZ -->
+        {% if file.quiz %}
+        <h2>Quiz Questions</h2>
+        <div class="summary-box">
+            <pre style="white-space: pre-wrap;">{{ file.quiz }}</pre>
+        </div>
+        {% endif %}
+
+    </div>
 </body>
 </html>

@@ -31,6 +31,12 @@ class UploadedFile(models.Model):
     processing_status = models.CharField(max_length=20, choices=PROCESSING_STATUS, default="pending")
     ocr_used = models.BooleanField(default=False)
 
+    summary = models.TextField(null=True, blank=True)
+    key_points = models.TextField(null=True, blank=True)
+    flashcards = models.TextField(null=True, blank=True)
+    quiz = models.TextField(null=True, blank=True)
+
+
     # Links this upload to the generated Note (if processing succeeded)
     note = models.OneToOneField(Note, on_delete=models.SET_NULL, null=True, blank=True)
 
